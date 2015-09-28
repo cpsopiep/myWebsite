@@ -1,0 +1,73 @@
+/* 
+    Created on : Sep 7, 2015
+    Last Modified on: Sep 20, 2015
+    Author     : Charlie Sopiep, Umass Lowell Computer Science Student
+    Contact me at csopiep@gmail.com
+    Modified the CSS file to make my website more presentable.
+*/
+
+
+body {
+    /* 
+    Standard grey background because white burns my eyes
+    Background created using CSSmatic  
+    */
+    background-image: url('../img.png');
+}
+
+/* Changes the font to sans-serif, no point in using multiple font styles with little content*/
+h1 {
+    font-family: sans-serif;
+}
+h2 {
+    font-family: sans-serif;
+}
+p {
+    font-family: sans-serif;
+}
+
+/* I didn't want to screenshot my old index so I just put border around it for my Assignment02  archive*/
+div.showcase {
+      width: 800px; 
+      border-style: solid 
+}
+
+/* Lines up the link for my navigation bar */
+li.line{
+     display: inline;
+}
+
+/* Book told me that using <br> too much is a bad habit so I decided to
+    explore line breaks in css. */
+div.form {
+    word-break:break-all;
+    width: 590px; 
+    text-indent: 30px;
+    padding-left:0.3cm
+}
+
+/* Enclosing the header in Assignment02 in div.form messes up the format so I had to separate it */
+h1.looks{
+     padding-left:0.3cm
+}
+
+/* Takes out these ugly margins and padding  for the navigation bar */
+ul.rmargin {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* nav and header line up h1 and h2 with the navigation bar  in Index */
+div.nav{
+    position: fixed;
+    width: 99.5%;
+    height: 35px;
+     text-align: center;
+}
+div.header{
+    text-align:center;
+     padding:5px;
+}
+
