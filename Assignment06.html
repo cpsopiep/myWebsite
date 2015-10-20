@@ -13,13 +13,84 @@ Currently a placeholder page for future projects.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
         <!--  The css file should be located in the css subdirectory  -->
         <link rel="stylesheet" href="css/style.css" > 
+        
+        <script type='text/javascript'>
+        
+          
+         function MakeTable(){
+          var num1 = document.getElementById("Multiplier1");
+          var num2 = document.getElementById("Multiplier2");
+          var num3 = document.getElementById("Multiplicand3");
+          var num4 = document.getElementById("Multiplicand4");
+          var str1 = parseInt (num1.value);
+          var str2 = parseInt (num2.value);
+          var str3 = parseInt (num3.value);
+          var str4 = parseInt (num4.value);
+          var str5 = parseInt (num1.value);
+
+          if (str1 > str2 || str3 > str4){
+              alert("The first number cannot be higher than the second");
+          }
+          else if (isNaN(str1)|| isNaN(str2)|| isNaN(str3)|| isNaN(str4) === true)
+          {
+              alert("Only numbers are allowed");
+          }
+           else { 
+          var HTML = '<table border="1" id = "Assn6-table"> <th id = "Assn6-tablecell">    </th>';
+
+            for (; str1 <= str2; str1++)
+          {  
+            HTML += '<th id = "Assn6-tablecell">' +  str1 + '</th>';
+        }
+
+          for (; str3 <= str4; str3++)
+          {
+              
+           HTML += '<tr><th id = "Assn6-tablecell">' +  str3 + '</th>';
+           
+            
+             
+          
+          for (str1 = str5; str1 <= str2; str1++)
+          {         
+              HTML += '<td id = "Assn6-tablecell">' +   str1 * str3  + '</td>';
+              
+            }
+         HTML += '</tr>'; 
+           
+        }
+          HTML += '</table>';   
+          document.getElementById("Assn6-main").innerHTML = HTML;
+           }
+        }
+         
+        
+        </script>
+        
     </head>
     <body>
-        <!--
-        No time to make it transparent
-             Image is also not mine        -->
-        <img src="Construction.jpg" alt="Nothing" style="width: 255px;height:255px">
+        <h1 id = "Assn6-head01">Assignment 6</h1>
+        <div id="Assn6-main">  </div>
+        <form id="Assn6-frm01">
+         First Value - Last Value   
+        </form>
+        <form id="Assn6-frm02">
+         Multiplier:
+        <input type="text" value = 0 size="3" id="Multiplier1">
+        <input type="text" value = 0 size="3" id="Multiplier2">
+        <input type="button" value="Make Table" onclick=" MakeTable() ">
+        </form>
+        <form id="Assn6-frm03">
+        Multiplicand:
+        <input type="text" value = 0 size="3" id="Multiplicand3">
+        <input type="text" value = 0 size="3" id="Multiplicand4">
+        </form>
+
+        
+        
     </body>
 </html>
