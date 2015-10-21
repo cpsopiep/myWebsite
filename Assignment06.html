@@ -4,7 +4,12 @@
 By Charlie Sopiep, Umass Lowell Computer Science Student
 Contact me at csopiep@gmail.com
 Created on 10/15/15
-Currently a placeholder page for future projects.
+Fixed most of the problems, such as Document.write() overwriting page
+Used the lazy but easy way of updating the page in one go with innerHTML
+
+Still need to look into finding a way to detect letters between integers like "8a8"
+Also need to deal with float numbers like 1.342423
+Since 1.432234 * 2.342332 = 2
 -->
 
 <html>
@@ -13,12 +18,12 @@ Currently a placeholder page for future projects.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-
         <!--  The css file should be located in the css subdirectory  -->
         <link rel="stylesheet" href="css/style.css" > 
         
         <script type='text/javascript'>                 
          function MakeTable(){
+             
           /* Might be redundant but I needed to store these values away from
            * the original
            * num1 to num4 correspond to a textbox value through its Id
