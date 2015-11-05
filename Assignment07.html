@@ -1,25 +1,79 @@
 <!DOCTYPE html>
 <!--
-91.461 Assignment 7:Using the jQuery Validation Plugin and jQueryUI Tabbed Widget
+91.461 Assignment 6 : Creating an Interactive Dynamic Table
 By Charlie Sopiep, Umass Lowell Computer Science Student
 Contact me at csopiep@gmail.com
-Created on 9/7/15
-Currently a placeholder page for future projects.
+Created on 10/15/15
+Fixed most of the problems, such as Document.write() overwriting page
+Used the lazy but easy way of updating the page in one go with innerHTML
+
+Still need to look into finding a way to detect letters between integers like "8a8"
+Also need to deal with float numbers like 1.342423
+Since 1.432234 * 2.342332 = 2
 -->
 
 <html>
     <head>
-        <title>Assignment 7</title>
+        <title>Assignment 6</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!--  The css file should be located in the css subdirectory  -->
         <link rel="stylesheet" href="css/style.css" > 
+        
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+
+        <script src="JQuery/Plugins/jquery.validate.min.js"></script>
+        <script src="JQuery/Plugins/additional-methods.min.js"></script>
+
+         
+         <script src='Assignment07.js'> </script>
+        
     </head>
     <body>
-        <!--
-        No time to make it transparent
-             Image is also not mine        -->
-        <img src="Construction.jpg" alt="Nothing" style="width: 255px;height:255px">
+        
+        <h1 id = "Assn7-head01">Assignment 6</h1>
+        
+        <!-- Table content goes here -->
+        <div id="Assn7-main01">  </div>  
+        
+        <!-- Originally used padding to center this until I realized it doesn't
+             scale well elsewhere. Margins and text-align are far better at 
+             centering objects  -->
+        <div id = "Assn7-main02">
+
+        <form id="Assn7-frm01" name = "Assn7-frm02">
+         <p>
+         Multiplier Starting Value(Top):
+        <input type="text" value = 0 size="3" id="Multiplier1" name="Multiplier1">
+        <label for="Multiplier1" class = "error" ></label>
+         </p>
+         
+         <p>
+         Multiplier Last Value(Top):
+        <input type="text" value = 0 size="3" id="Multiplier2" name="Multiplier2">
+        <label for="Multiplier2" class = "error" ></label>
+        </p>
+        
+         <p>
+        Multiplicand Starting Value(Side):
+        <input type="text" value = 0 size="3" id="Multiplicand3" name="Multiplicand3">
+        <label for="Multiplicand3" class = "error" ></label>
+        </p>
+        
+         <p>
+        Multiplicand Last Value(Side):
+        <input type="text" value = 0 size="3" id="Multiplicand4" name="Multiplicand4">
+        <label for="Multiplicand4" class = "error" ></label>
+        </p>
+        <input type="button" value="Make Table" id ="Assn7-btn01" onclick=" MakeTable() ">
+        </form>
+            </div>
+        
+        <div id = "Assn7-main03">
+            <a href="Index.html" id="Assn7-link01">Return to Index</a>
+        </div>
+        
     </body>
 </html>

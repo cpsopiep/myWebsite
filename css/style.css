@@ -17,7 +17,7 @@ body {
 }
 
 /* Changes the font to sans-serif, no point in using multiple font styles with little content*/
-h1 h2 h3 {
+h1, h2, h3 {
     font-family: sans-serif;
 }
 
@@ -25,7 +25,7 @@ h1 h2 h3 {
    the code provided so that it assigned an incremented id for each paragraph to
    allow for better control. But I didn't have enough javascript knowledge for it.
    Most of the attributes are designed for readability. */
-#Assn-p01 #Assn-p02 {
+#Assn-p01, #Assn-p02 {
     font-family: sans-serif;
     width: 1050px;
     text-indent: 30px;
@@ -94,43 +94,57 @@ for it later if needed.*/
 }
 
 /* Aligns everything to the center, should readjust if you change the page size*/
-#Assn6-head01
+#Assn6-head01, #Assn7-head01, #Assn6-main02, #Assn7-main03
 {
     text-align: center;
 }
-#Assn6-main02{
+
+
+#Assn7-main02
+{
      text-align: center;
+     padding-bottom: 1cm
 }
+
 #Assn6-frm01
 { 
     padding-bottom: 0.5cm;
     padding-top: 0.5cm     
 }
+
 #Assn6-frm02
 { 
     padding-bottom: 0.5cm
 }
+
 #Assn6-frm03
 { 
-    padding-right: 2.8cm;
-    padding-bottom: 1.5cm
+    padding-bottom: 1cm
 }
+
 
 /* The table cells dynamically generated in Assignment 6 is spaced 
    for readability */
-#Assn6-tablecell{
+#Assn6-tablecell, #Assn7-tablecell
+{
     border: 1px solid black;
     padding : 5px
 }
 /* Could not align the table perfectly so I just centered it along with
    every item in assignment 6 */
-#Assn6-table
-{
+#Assn6-table, #Assn7-table
+{ 
     border: 1px solid black;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
+
+
+.error {
+      color: red ; 
+      font-style: italic ;
+    }
 
 /* I didn't want to screenshot my old index so I just put 
    border around it for my Assignment02 archive*/
