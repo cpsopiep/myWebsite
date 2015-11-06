@@ -1,10 +1,10 @@
 /* 
     Created on : Sep 7, 2015
-    Last Modified on: Sep 20, 2015
+    Last Modified on: Nov 02, 2015
     Author     : Charlie Sopiep, Umass Lowell Computer Science Student
     Contact me at csopiep@gmail.com
-    Organized the attributes and renamed them to something more easier to remember
-    Left some of them at the bottom as is for future reference and rework.
+    Modified the css for Assignment 07 items, didn't need to do much since its
+    the same as Assignment 06.
 */
 
 
@@ -98,32 +98,27 @@ for it later if needed.*/
 {
     text-align: center;
 }
-
-
 #Assn7-main02
 {
      text-align: center;
      padding-bottom: 1cm
 }
-
 #Assn6-frm01
 { 
     padding-bottom: 0.5cm;
     padding-top: 0.5cm     
 }
-
 #Assn6-frm02
 { 
     padding-bottom: 0.5cm
 }
-
 #Assn6-frm03
 { 
     padding-bottom: 1cm
 }
 
 
-/* The table cells dynamically generated in Assignment 6 is spaced 
+/* The table cells dynamically generated in Assignment 6 and 7 is spaced 
    for readability */
 #Assn6-tablecell, #Assn7-tablecell
 {
@@ -131,7 +126,7 @@ for it later if needed.*/
     padding : 5px
 }
 /* Could not align the table perfectly so I just centered it along with
-   every item in assignment 6 */
+   every item in assignment 6 and 7 */
 #Assn6-table, #Assn7-table
 { 
     border: 1px solid black;
@@ -140,7 +135,7 @@ for it later if needed.*/
     margin-right: auto;
 }
 
-
+/* Should be enough to alert the user, unless they are colorblind */
 .error {
       color: red ; 
       font-style: italic ;
