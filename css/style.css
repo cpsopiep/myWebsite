@@ -140,7 +140,10 @@ for it later if needed.*/
   
 }
 
+<<<<<<< HEAD
 /* Default slider size was too big so I had to shrink it */
+=======
+>>>>>>> origin/gh-pages
 .ui-slider-horizontal {
     height: 8px;
     width: 5cm;
