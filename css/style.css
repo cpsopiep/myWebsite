@@ -1,0 +1,205 @@
+/* 
+    Created on : Sep 7, 2015
+    Last Modified on: Nov 15, 2015
+    Author     : Charlie Sopiep, Umass Lowell Computer Science Student
+    Contact me at csopiep@gmail.com
+    Modified the css for Assignment 08 items, didn't need to do much since its
+    the same as Assignment 09.
+*/
+
+
+body {
+    /* 
+    Standard grey background because white burns my eyes
+    Background created using CSSmatic  
+    */
+    background-image: url('../img.png');
+}
+
+/* Changes the font to sans-serif, no point in using multiple font styles with little content*/
+h1, h2, h3 {
+    font-family: sans-serif;
+}
+
+/* This changes the dynamic text in Assignment 05. Orginally I thought about modifying 
+   the code provided so that it assigned an incremented id for each paragraph to
+   allow for better control. But I didn't have enough javascript knowledge for it.
+   Most of the attributes are designed for readability. */
+#Assn-p01, #Assn-p02 {
+    font-family: sans-serif;
+    width: 1050px;
+    text-indent: 30px;
+    padding-bottom: 10px
+}
+
+/* Moves the dynamic text in Assignment05 slighty so its not at the edge which
+   is bad for the eyes.*/
+#content{
+    padding-left:0.5cm
+}
+
+/* Isolated the paragraphs from Assigment05, might have to dedicate a new css file
+for it later if needed.*/
+#Assn3-p01{
+    word-break:break-all;
+    width: 575px; 
+    text-indent: 30px;
+    padding-left:0.3cm;
+    font-family: sans-serif
+}
+#Assn3-p02{
+    word-break:break-all;
+    width: 590px; 
+    text-indent: 30px;
+    padding-left:0.3cm;
+    font-family: sans-serif    
+}
+#Assn3-p03{
+    word-break:break-all;
+    width: 605px; 
+    text-indent: 30px;
+    padding-left:0.3cm;
+    font-family: sans-serif
+}
+#Assn4-p01{
+    word-break:break-all;
+    width: 600px; 
+    text-indent: 30px;
+    padding-left:0.3cm;
+    font-family: sans-serif
+}
+#Assn4-p02{
+    word-break:break-all;
+    width: 640px; 
+    text-indent: 30px;
+    padding-left:0.3cm;
+    padding-bottom:0.5cm;
+    font-family: sans-serif
+}
+
+/* Spaced the GitHub link so that the user doesn't accidently click on it */
+#Assn4-link01{
+    padding-left:7cm
+}
+
+/* Padded the "return to index" link and image to line 
+    with the paragraph in Assignment05 */
+#Assn5-img01{
+    padding-top: 10px;
+    padding-left: 0.5cm
+}
+#Assn5-link01
+{
+    padding-left: 0.5cm
+}
+
+/* Aligns everything to the center, should readjust if you change the page size*/
+#Assn6-head01, #Assn7-head01, #Assn6-main02, #Assn7-main03,#Assn8-head01 ,#Assn8-main04
+{
+    text-align: center;
+}
+#Assn7-main02, #Assn8-main02
+{
+     text-align: center;
+     padding-bottom: 1cm
+}
+#Assn6-frm01
+{ 
+    padding-bottom: 0.5cm;
+    padding-top: 0.5cm     
+}
+#Assn6-frm02
+{ 
+    padding-bottom: 0.5cm
+}
+#Assn6-frm03
+{ 
+    padding-bottom: 1cm
+}
+
+
+/* The table cells dynamically generated in Assignment 6 and 7 is spaced 
+   for readability */
+#Assn6-tablecell, #Assn7-tablecell, #Assn8-tablecell
+{
+    border: 1px solid black;
+    padding : 5px
+}
+/* Could not align the table perfectly so I just centered it along with
+   every item in assignment 6 and 7 */
+#Assn6-table, #Assn7-table, #Assn8-table
+{ 
+    border: 1px solid black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Assn8-slider01, #Assn8-slider02, #Assn8-slider03, #Assn8-slider04{
+  margin:auto;
+  
+}
+
+/* Default slider size was too big so I had to shrink it */
+.ui-slider-horizontal {
+    height: 8px;
+    width: 5cm;
+}
+
+.ui-slider .ui-slider-handle {   
+    height: 15px;
+    width: 5px;
+}
+
+/* Should be enough to alert the user, unless they are colorblind */
+.error {
+      color: red ; 
+      font-style: italic ;
+    }
+
+/* I didn't want to screenshot my old index so I just put 
+   border around it for my Assignment02 archive*/
+div.showcase {
+      width: 800px; 
+      border-style: solid 
+}
+
+/* Lines up the link for my navigation bar */
+li.line{
+     display: inline;
+}
+
+/* Book told me that using <br> too much is a bad habit so I decided to
+    explore line breaks in css. */
+div.form {
+    word-break:break-all;
+    width: 590px; 
+    text-indent: 30px;
+    padding-left:0.3cm
+}
+
+/* Enclosing the header in Assignment02 in div.form messes up the format so I had to separate it */
+h1.looks{
+     padding-left:0.3cm
+}
+
+/* Takes out these ugly margins and padding for the navigation bar */
+ul.rmargin {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* nav and header line up h1 and h2 with the navigation bar in Index */
+div.nav{
+    position: fixed;
+    width: 99.5%;
+    height: 35px;
+     text-align: center;
+}
+div.header{
+    text-align:center;
+     padding:5px;
+}
+
