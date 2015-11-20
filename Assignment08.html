@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <!--
-91.461 Assignment 8: Styling Your First Web Page With CSS
+91.461 Assignment No. 8: Using the jQuery UI Slider and Tab Widgets
 By Charlie Sopiep, Umass Lowell Computer Science Student
 Contact me at csopiep@gmail.com
-Created on 9/7/15
-Currently a placeholder page for future projects.
+Created on 11/13/15
+Could not figure out how to remove tabs. You create the table by using the sliders
+or textboxes. Invalid forms are not submitted and the button gets greyed out until
+you fix the problems.
 -->
 
 <html>
@@ -15,11 +17,93 @@ Currently a placeholder page for future projects.
         
         <!--  The css file should be located in the css subdirectory  -->
         <link rel="stylesheet" href="css/style.css" > 
+        <link rel="stylesheet" href="JQueryUI/jquery-ui.css" >
+        
+        <!-- Hosted by google -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+        <!-- Latest version is 1.14.0 -->
+        <script src="JQuery/Plugins/jquery.validate.min.js"></script>
+        <script src="JQuery/Plugins/additional-methods.min.js"></script>
+        
+        <!-- Latest Version is 1.11.4 -->
+        <script src="JQueryUI/jquery-ui.js"></script>
+        <script src="JQueryUI/jquery-ui.min.js"></script>
+
+        <!-- No more javascript clutter, should be located with the corresponding html -->
+         <script src='Assignment08.js'> </script>
+        
     </head>
     <body>
-        <!--
-        No time to make it transparent
-             Image is also not mine        -->
-        <img src="Construction.jpg" alt="Nothing" style="width: 255px;height:255px">
+        
+        <h1 id = "Assn8-head01">Assignment 8</h1>      
+        
+        <!-- Preview of the table being created -->
+        <div id="Assn8-main01">  </div>  
+        
+        <!-- Tab starts here, the first tab will always be the one with sliders.
+             While the subsequent tabs will be copies of the tables.-->
+        <div id = Assn8-maintab>            
+         <ul>
+        <li><a href='#Assn8-main02'>Table Creation</a></li>
+         </ul>
+            
+        <div id = "Assn8-main02">
+            
+          <!-- Added sliders to the bottom, moving the sliders should update
+               the textbox and vice versa. They are default color and style because
+               I worked mostly on getting it to work.-->  
+        <form id="Assn8-frm01" name = "Assn8-frm01">            
+         Multiplier Starting Value(Top):
+        <input type="text" value = 0 size="3" id="Multiplier1" name="Multiplier1">  
+        <div id="Assn8-slider01"> </div>
+            
+         
+
+         Multiplier Last Value(Top):
+        <input type="text" value = 0 size="3" id="Multiplier2" name="Multiplier2">
+        <div id="Assn8-slider02"> </div>
+
+        
+
+        Multiplicand Starting Value(Side):
+        <input type="text" value = 0 size="3" id="Multiplicand3" name="Multiplicand3"> 
+        <div id="Assn8-slider03"> </div>
+ 
+        
+        Multiplicand Last Value(Side):
+        <input type="text" value = 0 size="3" id="Multiplicand4" name="Multiplicand4">
+        <div id="Assn8-slider04"> </div>
+
+        <!-- Shows the user where they messed up on the form.
+             Should be red and in italics.-->
+        <p>
+            <label for="Multiplier1" class = "error" ></label>
+        </p>
+        <p>
+            <label for="Multiplier2" class = "error" ></label>
+        </p>
+        <p>
+            <label for="Multiplicand3" class = "error" ></label>
+        </p>
+        <p>
+            <label for="Multiplicand4" class = "error" ></label>
+        </p>
+        
+        <!-- Does not make the table anymore, it instead creates a 
+             copy of the table in the next tab.-->
+        <input type="button" value="Make Table" id ="Assn8-btn01" onclick=" MakeTableTab() ">
+        </form>
+            </div>
+
+            
+        </div>
+
+        
+         <!-- Links back to the index since I will be linking directly to this page. -->
+        <div id = "Assn8-main04">
+            <a href="Index.html" id="Assn8-link01">Return to Index</a>
+        </div>
+        
     </body>
 </html>
