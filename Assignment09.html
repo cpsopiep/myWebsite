@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+91.461 Assignment No. 9: Mini Scrabble
+By Charlie Sopiep, Umass Lowell Computer Science Student
+Contact me at csopiep@gmail.com
+Created on 12/21/15
+Could not figure out how to remove tabs. You create the table by using the sliders
+or textboxes. Invalid forms are not submitted and the button gets greyed out until
+you fix the problems.
+-->
+<html>
+    <head>
+        <title>Assignment 9</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--  The css file should be located in the css subdirectory  -->
+        <link rel="stylesheet" href="css/Assignment09.css" > 
+        <link rel="stylesheet" href="JQueryUI/jquery-ui.css" >
+        
+        <!-- Hosted by google -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+        <!-- Latest version is 1.14.0 -->
+        <script src="JQuery/Plugins/jquery.validate.min.js"></script>
+        <script src="JQuery/Plugins/additional-methods.min.js"></script>
+        
+        <!-- Latest Version is 1.11.4 -->
+        <script src="JQueryUI/jquery-ui.js"></script>
+        <script src="JQueryUI/jquery-ui.min.js"></script>
+
+        <!-- No more javascript clutter, should be located with the corresponding html -->
+         <script src='Assignment09.js'> </script>
+         
+       
+    
+    </head>
+    <body>
+<div id="Assn9-main01">
+<h1>Assignment 9</h1>
+    <div id="Board">
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=1 draggable= false class="test"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=2  draggable= false class="test"/>
+        <img src="images/Scrabble_DoubleWordScore01.jpg" alt="none" id=3  draggable= false class="test"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=4  draggable= false class="test"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=5  draggable= false class="test"/>
+        <img src="images/Scrabble_DoubleWordScore01.jpg" alt="none" id=6  draggable= false class="test"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none"  id=7 draggable= false class="test"/>
+    </div>
+
+<div id="WordContainer">
+    <br>
+    <label>Word:</label>
+    <label id="word"></label>
+    <br>
+    <label>Score:</label>
+    <label id="score"></label>
+    <br>
+</div>
+
+<div id="Tile-Holder">
+    <img src="images/scrabble-tile-holder.png" alt="none" id="holder" draggable= false class="test1"/>
+</div>
+<div id="rack"></div>
+    
+
+</div>
+           
+    </body>
+</html>

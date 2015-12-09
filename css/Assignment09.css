@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 3, 2015, 10:00:18 PM
+    Author     : csopi
+*/
+
+h1{
+    text-align:center;
+}
+
+body {
+    /* 
+    Standard grey background because white burns my eyes
+    Background created using CSSmatic  
+    */
+    background-image: url('../img.png');
+}
+.draggable { width: 50px; 
+            height: 50px; 
+            padding: 5px; 
+            float: left;
+            margin: 0 10px 10px 0; 
+            font-size: .9em; }
+  .ui-widget-header p, .ui-widget-content p { margin: 0; }
+  
+  #Board, #Tile-Holder, #rack{
+      text-align:center;
+  }
+  
+  #WordContainer{
+     height: 150px; 
+     text-align:center;
+     
+  }
+  .test{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
