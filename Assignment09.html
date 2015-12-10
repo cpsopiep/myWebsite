@@ -3,10 +3,9 @@
 91.461 Assignment No. 9: Mini Scrabble
 By Charlie Sopiep, Umass Lowell Computer Science Student
 Contact me at csopiep@gmail.com
-Created on 12/21/15
-Could not figure out how to remove tabs. You create the table by using the sliders
-or textboxes. Invalid forms are not submitted and the button gets greyed out until
-you fix the problems.
+Created on 11/23/15
+Got most of the basic functions done, still need to add some additional things
+like making the tiles sortable and not stackable.
 -->
 <html>
     <head>
@@ -31,39 +30,42 @@ you fix the problems.
 
         <!-- No more javascript clutter, should be located with the corresponding html -->
          <script src='Assignment09.js'> </script>
-         
-       
-    
     </head>
+    
     <body>
 <div id="Assn9-main01">
+     
 <h1>Assignment 9</h1>
+
+ <!-- Probably not an actual scrabble board but I wanted to deal with the double word space.
+      Images used from Prof. Heines's website --> 
     <div id="Board">
-        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=1 draggable= false class="test"/>
-        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=2  draggable= false class="test"/>
-        <img src="images/Scrabble_DoubleWordScore01.jpg" alt="none" id=3  draggable= false class="test"/>
-        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=4  draggable= false class="test"/>
-        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=5  draggable= false class="test"/>
-        <img src="images/Scrabble_DoubleWordScore01.jpg" alt="none" id=6  draggable= false class="test"/>
-        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none"  id=7 draggable= false class="test"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=1 draggable= false class="GameBoard"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=2  draggable= false class="GameBoard"/>
+        <img src="images/Scrabble_DoubleWordScore01.jpg" alt="none" id=3  draggable= false class="GameBoard"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=4  draggable= false class="GameBoard"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none" id=5  draggable= false class="GameBoard"/>
+        <img src="images/Scrabble_DoubleWordScore01.jpg" alt="none" id=6  draggable= false class="GameBoard"/>
+        <img src="images/Scrabble_BlankSquare_01.jpg" alt="none"  id=7 draggable= false class="GameBoard"/>
     </div>
 
-<div id="WordContainer">
-    <br>
+ <!-- Tracks the word entered by the user. Also keeps score and used for spacing. -->  
+ <div id="Tracker">
+        <br>
     <label>Word:</label>
-    <label id="word"></label>
+    <label id="Word"></label>
     <br>
     <label>Score:</label>
-    <label id="score"></label>
+    <label id="Score"></label>
     <br>
-</div>
+ </div>
 
+ <!-- Rack image provided by Jason Downing, thanks to him. Tile-Holder keeps the
+      tiles while Rack spawns them. -->
 <div id="Tile-Holder">
-    <img src="images/scrabble-tile-holder.png" alt="none" id="holder" draggable= false class="test1"/>
+    <img src="images/scrabble-tile-holder.png" alt="none" id="holder" draggable = false />
 </div>
-<div id="rack"></div>
-    
-
+<div id="Rack"></div>
 </div>
            
     </body>

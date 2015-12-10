@@ -1,9 +1,14 @@
 /* 
-
-
+91.461 Assignment No. 9: Mini Scrabble
+By Charlie Sopiep, Umass Lowell Computer Science Student
+Contact me at csopiep@gmail.com
+Created on 11/23/15
+Got most of the basic functions done, still need to add some additional things
+like making the tiles sortable and not stackable.
  */
 
-var pieces = [
+//No idea how to use JSON but I do know how to deal with arrays.
+var Scrabble_Pieces = [
   {"letter":"A", "value":1,  "amount":9},
   {"letter":"B", "value":3,  "amount":2},
   {"letter":"C", "value":3,  "amount":2},
@@ -33,10 +38,7 @@ var pieces = [
   {"letter":"_", "value":0,  "amount":2}
 ];
 
-
-
-
-
+//Keeps track of the board
 var board_slots = new Array(6);
 
 
@@ -46,10 +48,12 @@ $(document).ready(function() {
     
     GenerateTiles();
     
- $(".test").droppable({drop: tileDropped, out: tileRemoved});
+ $(".GameBoard").droppable({drop: tileDropped, out: tileRemoved});
 
 });
 
+/* Adds the letter contained in the array board_slots to a string.
+   Changes the text of #Word with the string. */
 function updateScrabbleWord()
 {
     var newText = "";
@@ -58,42 +62,38 @@ function updateScrabbleWord()
     for (i = 0; i < board_slots.length; i++)
     {
         if (board_slots[i] !== undefined && board_slots[i].length > 0)
-            newText += (board_slots[i])
+            newText += (board_slots[i]);
     }
 
-    
-    $("#word").text(newText);
+    $("#Word").text(newText);
 }
 
-
-function updateScore()
+/*Checks if there is the same letter in the Scrabble_Pieces array and board_slots array
+  Grabs the value from the letter found in the Scrable_pieces array and adds it to the score
+  Also checks if there if there a tile occupying the double word space and
+  doubles the score accordingly */
+function updateScore()  
 {
-    
     var score = 0;
     var doubleWord = false;
-
-
-
-
-    
+ 
     for (i = 0; i < board_slots.length; i++)
     {
 
         if (board_slots[i] !== undefined && board_slots[i].length > 0)
         
         {
-            for (x = 0; x < pieces.length; x++)
+            for (x = 0; x < Scrabble_Pieces.length; x++)
             {
-                if (pieces[x].letter === board_slots[i])
-                  
+                if (Scrabble_Pieces[x].letter === board_slots[i])                 
                     if(i === 3 || i === 6)
                     {
-                         score += pieces[x].value;
+                         score += Scrabble_Pieces[x].value;
                         doubleWord = true;
                         
                     }
                     else
-                        score += pieces[x].value;
+                        score += Scrabble_Pieces[x].value;
             }
         }
     }
@@ -104,12 +104,14 @@ function updateScore()
     }
     
   
-  
-    $("#score").text(score);
+    $("#Score").text(score);
 }
+
+/* Checks if a tile has been dropped onto one of the scrabble board
+   Adds that letter onto the board_slots array for tracking 
+   Updates both the Score and Word */
 function tileDropped(event, ui)
 {
-    console.log("tile: " + ui.draggable.attr("id") + " dropped");
 
     ui.draggable.position(
     {
@@ -117,19 +119,18 @@ function tileDropped(event, ui)
         at: "center",
         of: $(this)
     });
-
    
     board_slots[$(this).attr("id")] = ui.draggable.attr("alt");
-
     
     updateScore();
     updateScrabbleWord();
 }
 
+/* Checks if the tile has been removed from the scrabble board
+   Pops it out of the board_slots array 
+   Updates both the Score and Word */
 function tileRemoved(event, ui)
 {
-    console.log("tile: " + ui.helper.attr("id") + " removed");
-
     
     if(ui.draggable.attr("id") === board_slots[$(this).attr("id")])
     {
@@ -139,6 +140,10 @@ function tileRemoved(event, ui)
     updateScrabbleWord();
 }
 
+/* Creates tiles that spawn at the rack
+   These tiles are made only draggable and snappable to the board pieces up top
+   They are also resized to fit them 
+   What letters are picked is determined by a simple randomizer */
 function GenerateTiles(){
   var base_url = "images/Scrabble_Tile_";
   var random = 1;
@@ -149,21 +154,18 @@ function GenerateTiles(){
     var loop = true;
     while(loop === true){
       random = Math.floor(Math.random() * 27);
-       if(pieces[random].amount !== 0) {
+       if(Scrabble_Pieces[random].amount !== 0) {
         loop = false;
-        pieces[random].amount--;
+        Scrabble_Pieces[random].amount--;
       }
     }
     
-  
-   mytile = base_url + pieces[random].letter;
+   mytile = base_url + Scrabble_Pieces[random].letter;
    var char = mytile.substring(21, 22);
 piece = "<img class='pieces' id='" + char + "' src='" + mytile + ".jpg'" +"alt='"+ char +"'></img>";
 
     
-
-     $("#rack").append(piece);
-
+     $("#Rack").append(piece);
 
     $(".pieces").css("left", -5).css("top", -138).css("position", "relative").css("width","85px");
     $(".pieces").draggable({snap: "#Board" ,snapMode: "inner"});

@@ -1,16 +1,12 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Dec 3, 2015, 10:00:18 PM
-    Author     : csopi
+91.461 Assignment No. 9: Mini Scrabble
+By Charlie Sopiep, Umass Lowell Computer Science Student
+Contact me at csopiep@gmail.com
+Created on 11/23/15
+Got most of the basic functions done, still need to add some additional things
+like making the tiles sortable and not stackable.
 */
 
-h1{
-    text-align:center;
-}
 
 body {
     /* 
@@ -19,27 +15,35 @@ body {
     */
     background-image: url('../img.png');
 }
-.draggable { width: 50px; 
-            height: 50px; 
-            padding: 5px; 
-            float: left;
-            margin: 0 10px 10px 0; 
-            font-size: .9em; }
-  .ui-widget-header p, .ui-widget-content p { margin: 0; }
-  
-  #Board, #Tile-Holder, #rack{
-      text-align:center;
-  }
-  
-  #WordContainer{
-     height: 150px; 
-     text-align:center;
-     
-  }
-  .test{
-    display: inline-block;
+
+ /* Lines up the Scrabble board pieces so are aligned while spacing them
+   so that the snapping works better. */
+  .GameBoard {
     margin-left: auto;
     margin-right: auto;
   }
+  
+  
+
+  
+  /* Used for spacing purposes, so that everything is not too close */
+  #Tracker{
+      height:150px;
+      text-align:center;
+  }
+  
+ 
+/* Scales the items to center
+  Board is the div holding the Scrabble board pieces
+  Tile-Holder is the div holding the tile rack itself
+  Rack is the div that spawns the tile located below #Tile-Holder
+*/
+  #Board, #Tile-Holder, #Rack, h1{
+      text-align:center;
+  }
+  
+  
+  
+ 
   
   
