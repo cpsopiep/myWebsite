@@ -4,7 +4,8 @@ By Charlie Sopiep, Umass Lowell Computer Science Student
 Contact me at csopiep@gmail.com
 Created on 11/23/15
 Got most of the basic functions done, still need to add some additional things
-like making the tiles sortable and not stackable.
+like making the tiles sortable and not stackable. Didn't implement word checking
+yet.
  */
 
 //No idea how to use JSON but I do know how to deal with arrays.
@@ -51,6 +52,40 @@ $(document).ready(function() {
  $(".GameBoard").droppable({drop: tileDropped, out: tileRemoved});
 
 });
+
+
+/* Checks if a tile has been dropped onto one of the scrabble board
+   Adds that letter onto the board_slots array for tracking 
+   Updates both the Score and Word */
+function tileDropped(event, ui)
+{
+
+    ui.draggable.position(
+    {
+        my: "center",
+        at: "center",
+        of: $(this)
+    });
+   
+    board_slots[$(this).attr("id")] = ui.draggable.attr("alt");
+    
+    updateScore();
+    updateScrabbleWord();
+}
+
+/* Checks if the tile has been removed from the scrabble board
+   Pops it out of the board_slots array 
+   Updates both the Score and Word */
+function tileRemoved(event, ui)
+{
+    
+    if(ui.draggable.attr("id") === board_slots[$(this).attr("id")])
+    {
+        board_slots[$(this).attr("id")] = "";
+    }
+    updateScore();
+    updateScrabbleWord();
+}
 
 /* Adds the letter contained in the array board_slots to a string.
    Changes the text of #Word with the string. */
@@ -105,39 +140,6 @@ function updateScore()
     
   
     $("#Score").text(score);
-}
-
-/* Checks if a tile has been dropped onto one of the scrabble board
-   Adds that letter onto the board_slots array for tracking 
-   Updates both the Score and Word */
-function tileDropped(event, ui)
-{
-
-    ui.draggable.position(
-    {
-        my: "center",
-        at: "center",
-        of: $(this)
-    });
-   
-    board_slots[$(this).attr("id")] = ui.draggable.attr("alt");
-    
-    updateScore();
-    updateScrabbleWord();
-}
-
-/* Checks if the tile has been removed from the scrabble board
-   Pops it out of the board_slots array 
-   Updates both the Score and Word */
-function tileRemoved(event, ui)
-{
-    
-    if(ui.draggable.attr("id") === board_slots[$(this).attr("id")])
-    {
-        board_slots[$(this).attr("id")] = "";
-    }
-    updateScore();
-    updateScrabbleWord();
 }
 
 /* Creates tiles that spawn at the rack
